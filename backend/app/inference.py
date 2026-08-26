@@ -19,6 +19,10 @@ try:
     import torch
     from torch import nn
     from torchvision import models, transforms
+
+    # Railway virtual CPU does not support NNPACK.
+    # Disable it so PyTorch uses a compatible CPU backend.
+    torch.backends.nnpack.set_flags(False)
 except Exception:  # pragma: no cover - backend can still expose demo mode without torch
     torch = None
     nn = None
