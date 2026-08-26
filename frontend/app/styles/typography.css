@@ -1,0 +1,628 @@
+/* HASILTANI — Typography System
+   Modern bold sans-serif direction based on the user's visual reference.
+   IMPORTANT: this file intentionally does NOT set text colors or backgrounds.
+*/
+
+:root {
+  --ht-font-display:
+    "Segoe UI Variable Display",
+    "Aptos Display",
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  --ht-font-body:
+    "Segoe UI Variable Text",
+    "Aptos",
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* ==========================================================================
+   GLOBAL FAMILY
+   ========================================================================== */
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+option {
+  font-family: var(--ht-font-body) !important;
+}
+
+body {
+  font-weight: 450;
+  letter-spacing: -0.008em;
+}
+
+a,
+button,
+label,
+input,
+select,
+textarea,
+small,
+span,
+p,
+li,
+td,
+th,
+dt,
+dd {
+  font-family: inherit;
+}
+
+/* All prominent titles use one modern grotesk / sans direction. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display,
+.section-title,
+.section-head-foundation h2,
+.hero-title-foundation,
+.commodity-body-foundation h3,
+.flow-card-foundation h3,
+.route-card-foundation h3,
+.closing-copy h2,
+.form-card h1,
+.form-card h2,
+.result-condition,
+.auth-visual-content h1,
+.auth-visual-content-account h1,
+.auth-form h2,
+.auth-form-account h2,
+.dashboard-topbar h1,
+.welcome-card h2,
+.quick-card strong,
+.role-card h3,
+.pool-batch strong,
+.pool-target strong,
+.impact-item strong,
+.story-step-number,
+.commodity-detail-copy h1,
+.commodity-card-heading h2,
+.commodity-condition-head h2,
+.condition-card h3,
+.commodity-ai-card h2,
+.scan-aside h1,
+.scan-form-card h1,
+.scan-form-card h2 {
+  font-family: var(--ht-font-display) !important;
+  font-style: normal;
+  font-variation-settings: "wght" 800;
+}
+
+/* Decorative serif italics from the old design become clean sans accents. */
+.hero-title-line.accent,
+.hero-copy-foundation em,
+.section-head-foundation h2 em,
+.commodity-head h2 em,
+.flow-head h2 em,
+.route-head h2 em {
+  font-family: var(--ht-font-display) !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+}
+
+/* Scientific names keep typographic italics, but stay in the SAME sans family. */
+.commodity-scientific,
+.commodity-meta small {
+  font-family: var(--ht-font-body) !important;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   LANDING PAGE
+   ========================================================================== */
+
+.hero-title-foundation {
+  font-size: clamp(54px, 6.7vw, 94px) !important;
+  font-weight: 800 !important;
+  line-height: .94 !important;
+  letter-spacing: -.058em !important;
+}
+
+.hero-title-line.compact {
+  margin-top: .10em;
+  font-size: .54em !important;
+  line-height: 1.03 !important;
+  letter-spacing: -.048em !important;
+}
+
+.hero-eyebrow,
+.section-kicker,
+.eyebrow {
+  font-family: var(--ht-font-body) !important;
+  font-weight: 800 !important;
+  letter-spacing: .12em !important;
+}
+
+.hero-description,
+.hero-copy-foundation .lead {
+  font-size: clamp(15px, 1.22vw, 18px) !important;
+  line-height: 1.68 !important;
+  letter-spacing: -.012em;
+}
+
+.hero-signal strong {
+  font-family: var(--ht-font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em;
+}
+
+.hero-signal span,
+.hero-insight,
+.hero-insight p,
+.hero-insight span {
+  font-family: var(--ht-font-body) !important;
+}
+
+.hero-insight-top {
+  font-weight: 800 !important;
+}
+
+.hero-insight-stack p {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: -.008em;
+}
+
+.hero-insight-stack > div > span {
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   SECTION HEADINGS
+   ========================================================================== */
+
+.section-head-foundation h2,
+.commodity-head h2,
+.flow-head h2,
+.route-head h2 {
+  font-size: clamp(38px, 4.55vw, 64px) !important;
+  font-weight: 800 !important;
+  line-height: .99 !important;
+  letter-spacing: -.052em !important;
+}
+
+.section-head-foundation > p,
+.commodity-head > p,
+.flow-head > p,
+.route-head > p {
+  font-family: var(--ht-font-body) !important;
+  font-size: clamp(14px, 1.02vw, 16px) !important;
+  line-height: 1.68 !important;
+  letter-spacing: -.01em;
+}
+
+/* ==========================================================================
+   COMMODITY CARDS + DETAIL
+   ========================================================================== */
+
+.commodity-body-foundation h3,
+.commodity-body-catalog h3 {
+  font-size: clamp(28px, 2.2vw, 34px) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.045em !important;
+}
+
+.commodity-body-foundation p,
+.commodity-body-catalog p {
+  font-size: 12.5px !important;
+  line-height: 1.62 !important;
+  letter-spacing: -.006em;
+}
+
+.commodity-meta > span,
+.commodity-link {
+  font-family: var(--ht-font-body) !important;
+  font-weight: 800 !important;
+}
+
+.commodity-detail-copy h1 {
+  font-size: clamp(52px, 6vw, 82px) !important;
+  font-weight: 800 !important;
+  line-height: .94 !important;
+  letter-spacing: -.057em !important;
+}
+
+.commodity-summary {
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+}
+
+.commodity-card-heading h2,
+.commodity-condition-head h2,
+.commodity-ai-card h2 {
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.042em !important;
+}
+
+.commodity-card-heading h2 {
+  font-size: clamp(28px, 2.6vw, 38px) !important;
+}
+
+.commodity-ai-card h2 {
+  font-size: clamp(32px, 3.2vw, 46px) !important;
+}
+
+.commodity-condition-head h2 {
+  font-size: clamp(36px, 4vw, 54px) !important;
+}
+
+.condition-card h3 {
+  font-size: clamp(27px, 2.25vw, 36px) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.04em !important;
+}
+
+.condition-card p {
+  line-height: 1.62 !important;
+}
+
+/* ==========================================================================
+   WORKFLOW + SMART DESTINATION
+   ========================================================================== */
+
+.flow-number {
+  font-family: var(--ht-font-display) !important;
+  font-weight: 750 !important;
+}
+
+.flow-card-workflow h3 {
+  font-size: clamp(21px, 1.55vw, 27px) !important;
+  font-weight: 800 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.035em !important;
+}
+
+.flow-card-workflow p {
+  font-size: clamp(12px, .88vw, 14px) !important;
+  line-height: 1.58 !important;
+}
+
+.route-source-copy-foundation strong,
+.route-source-copy-routing strong {
+  font-family: var(--ht-font-display) !important;
+  font-size: clamp(20px, 1.55vw, 24px) !important;
+  font-weight: 800 !important;
+  line-height: 1.03 !important;
+  letter-spacing: -.035em !important;
+}
+
+.route-card-copy h3,
+.route-card-foundation h3 {
+  font-size: clamp(21px, 1.65vw, 27px) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.038em !important;
+}
+
+.route-card-copy p {
+  line-height: 1.52 !important;
+}
+
+.route-action,
+.route-message-cta {
+  font-family: var(--ht-font-body) !important;
+  font-weight: 800 !important;
+  letter-spacing: .015em;
+}
+
+/* ==========================================================================
+   CLOSING + FOOTER
+   ========================================================================== */
+
+.closing-copy h2 {
+  font-size: clamp(40px, 4.7vw, 64px) !important;
+  font-weight: 800 !important;
+  line-height: .98 !important;
+  letter-spacing: -.052em !important;
+}
+
+.closing-copy p {
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+}
+
+.site-footer,
+.site-footer-foundation {
+  font-family: var(--ht-font-body) !important;
+}
+
+.site-footer h3,
+.site-footer h4,
+.site-footer-foundation h3,
+.site-footer-foundation h4 {
+  font-family: var(--ht-font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.025em;
+}
+
+/* ==========================================================================
+   SCAN + RESULT
+   ========================================================================== */
+
+.form-card h1,
+.form-card h2,
+.scan-form-card h1,
+.scan-form-card h2 {
+  font-weight: 800 !important;
+  line-height: 1.01 !important;
+  letter-spacing: -.045em !important;
+}
+
+.form-card h1,
+.scan-form-card h1 {
+  font-size: clamp(36px, 4vw, 52px) !important;
+}
+
+.form-card h2,
+.scan-form-card h2 {
+  font-size: clamp(30px, 3vw, 42px) !important;
+}
+
+.result-condition {
+  font-size: clamp(46px, 6.4vw, 78px) !important;
+  font-weight: 850 !important;
+  line-height: .93 !important;
+  letter-spacing: -.055em !important;
+}
+
+.result-kicker {
+  font-family: var(--ht-font-body) !important;
+  font-weight: 800 !important;
+}
+
+.result-grid h2,
+.result-grid h3,
+.panel h2,
+.panel h3 {
+  font-family: var(--ht-font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em;
+}
+
+/* ==========================================================================
+   AUTH
+   ========================================================================== */
+
+.auth-visual-content h1,
+.auth-visual-content-account h1 {
+  font-size: clamp(42px, 4.25vw, 62px) !important;
+  font-weight: 800 !important;
+  line-height: .97 !important;
+  letter-spacing: -.052em !important;
+}
+
+.auth-form h2,
+.auth-form-account h2 {
+  font-size: clamp(35px, 3vw, 46px) !important;
+  font-weight: 800 !important;
+  line-height: .98 !important;
+  letter-spacing: -.048em !important;
+}
+
+.auth-intro,
+.auth-visual-content-account p {
+  line-height: 1.62 !important;
+}
+
+.auth-kicker,
+.auth-visual-kicker,
+.auth-demo-label {
+  font-family: var(--ht-font-body) !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   DASHBOARD — PETANI / BUYER / ADMIN
+   ========================================================================== */
+
+.dashboard-body,
+.dashboard-topbar,
+.sidebar,
+.dashboard-main,
+.role-content {
+  font-family: var(--ht-font-body) !important;
+}
+
+.dashboard-topbar h1 {
+  font-size: clamp(23px, 2vw, 28px) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.04em !important;
+}
+
+.welcome-card h2 {
+  max-width: 660px;
+  font-size: clamp(34px, 3.4vw, 44px) !important;
+  font-weight: 800 !important;
+  line-height: .98 !important;
+  letter-spacing: -.05em !important;
+}
+
+.quick-card strong {
+  font-size: clamp(42px, 4vw, 52px) !important;
+  font-weight: 800 !important;
+  line-height: .95 !important;
+  letter-spacing: -.048em !important;
+}
+
+.stat-card strong,
+.detail-card strong,
+.meta-box strong {
+  font-family: var(--ht-font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em;
+}
+
+.role-card h3 {
+  font-size: clamp(26px, 2.2vw, 31px) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.04em !important;
+}
+
+.pool-batch strong {
+  font-size: 31px !important;
+  font-weight: 800 !important;
+  letter-spacing: -.04em;
+}
+
+.pool-target strong {
+  font-size: clamp(42px, 4vw, 50px) !important;
+  font-weight: 850 !important;
+  letter-spacing: -.05em;
+}
+
+.impact-item strong {
+  font-size: clamp(34px, 4.3vw, 52px) !important;
+  font-weight: 850 !important;
+  line-height: .95 !important;
+}
+
+.side-link,
+.sidebar-profile,
+.dashboard-role-mobile,
+.mobile-topnav-mobile,
+.dashboard-mobile-sheet {
+  font-family: var(--ht-font-body) !important;
+}
+
+.side-link {
+  font-weight: 700 !important;
+}
+
+.side-link.active {
+  font-weight: 800 !important;
+}
+
+table,
+th,
+td {
+  font-family: var(--ht-font-body) !important;
+}
+
+th {
+  font-weight: 800 !important;
+  letter-spacing: .02em;
+}
+
+/* ==========================================================================
+   BUTTONS + NAVIGATION
+   ========================================================================== */
+
+.btn,
+.btn-foundation,
+.btn-primary-catalog,
+.btn-secondary,
+.route-action,
+.site-nav,
+.site-nav-brand {
+  font-family: var(--ht-font-body) !important;
+}
+
+.btn,
+.btn-foundation,
+.btn-primary-catalog,
+.btn-secondary {
+  font-weight: 800 !important;
+  letter-spacing: -.012em;
+}
+
+.site-nav a,
+.site-nav-brand a,
+.dashboard-link,
+.role-chip {
+  font-weight: 750 !important;
+  letter-spacing: -.01em;
+}
+
+.site-nav a.active,
+.site-nav-brand a.active,
+.dashboard-link.dashboard-active {
+  font-weight: 850 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 920px) {
+  .hero-title-foundation {
+    font-size: clamp(48px, 10vw, 72px) !important;
+    line-height: .95 !important;
+  }
+
+  .section-head-foundation h2,
+  .commodity-head h2,
+  .flow-head h2,
+  .route-head h2 {
+    font-size: clamp(36px, 7.3vw, 52px) !important;
+  }
+
+  .commodity-detail-copy h1 {
+    font-size: clamp(46px, 10vw, 68px) !important;
+  }
+
+  .closing-copy h2 {
+    font-size: clamp(38px, 7.8vw, 54px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    letter-spacing: -.004em;
+  }
+
+  .hero-title-foundation {
+    font-size: clamp(44px, 12.5vw, 62px) !important;
+    letter-spacing: -.052em !important;
+  }
+
+  .hero-title-line.compact {
+    font-size: .58em !important;
+  }
+
+  .section-head-foundation h2,
+  .commodity-head h2,
+  .flow-head h2,
+  .route-head h2 {
+    font-size: clamp(33px, 9.4vw, 45px) !important;
+    letter-spacing: -.046em !important;
+  }
+
+  .commodity-body-foundation h3,
+  .commodity-body-catalog h3 {
+    font-size: 29px !important;
+  }
+
+  .welcome-card h2 {
+    font-size: clamp(30px, 8vw, 38px) !important;
+  }
+
+  .dashboard-topbar h1 {
+    font-size: 20px !important;
+  }
+
+  .result-condition {
+    font-size: clamp(42px, 12vw, 60px) !important;
+  }
+
+  .auth-form h2,
+  .auth-form-account h2 {
+    font-size: clamp(33px, 9vw, 42px) !important;
+  }
+}

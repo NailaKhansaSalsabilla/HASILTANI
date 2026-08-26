@@ -1,0 +1,123 @@
+{
+  "task": "stage",
+  "commodity": "mangga",
+  "classes": [
+    "overripe",
+    "ripe",
+    "unripe"
+  ],
+  "input_size": 224,
+  "model_version": "mobilenetv3-small-mangga-stage-q1",
+  "confidence_threshold": 0.5,
+  "best_val_macro_f1": 0.931232,
+  "test_macro_f1": 0.870891,
+  "test_report": {
+    "overripe": {
+      "precision": 0.7037037037037037,
+      "recall": 0.8636363636363636,
+      "f1-score": 0.7755102040816326,
+      "support": 22.0
+    },
+    "ripe": {
+      "precision": 0.9130434782608695,
+      "recall": 0.8513513513513513,
+      "f1-score": 0.8811188811188811,
+      "support": 74.0
+    },
+    "unripe": {
+      "precision": 0.9560439560439561,
+      "recall": 0.9560439560439561,
+      "f1-score": 0.9560439560439561,
+      "support": 91.0
+    },
+    "accuracy": 0.9037433155080213,
+    "macro avg": {
+      "precision": 0.8575970460028431,
+      "recall": 0.8903438903438904,
+      "f1-score": 0.8708910137481567,
+      "support": 187.0
+    },
+    "weighted avg": {
+      "precision": 0.9093406356833468,
+      "recall": 0.9037433155080213,
+      "f1-score": 0.9051551962170756,
+      "support": 187.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      19,
+      3,
+      0
+    ],
+    [
+      7,
+      63,
+      4
+    ],
+    [
+      1,
+      3,
+      87
+    ]
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5599749249313515,
+      "train_macro_f1": 0.7948662492583809,
+      "val_loss": 0.4163934963364755,
+      "val_macro_f1": 0.8150472944776741
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.38096996090174967,
+      "train_macro_f1": 0.8932024223548131,
+      "val_loss": 0.4075023384504421,
+      "val_macro_f1": 0.9053571428571429
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3209742205929382,
+      "train_macro_f1": 0.9287080012125751,
+      "val_loss": 0.29530551516881554,
+      "val_macro_f1": 0.9312321665262843
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.2737325898951885,
+      "train_macro_f1": 0.941828866924579,
+      "val_loss": 0.31315010978329566,
+      "val_macro_f1": 0.9070836874020891
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.25524596590646276,
+      "train_macro_f1": 0.9621603841484943,
+      "val_loss": 0.32508514196641985,
+      "val_macro_f1": 0.9049586216252883
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.2559120568617476,
+      "train_macro_f1": 0.9563781500037388,
+      "val_loss": 0.27663137066748833,
+      "val_macro_f1": 0.9203023270514082
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.2273193502301321,
+      "train_macro_f1": 0.9778308951584814,
+      "val_loss": 0.2887949111961549,
+      "val_macro_f1": 0.9243230207607972
+    }
+  ],
+  "dataset_root": "quality_data\\stage\\mangga",
+  "notes": [
+    "Hierarchical HASILTANI quality model.",
+    "Stage models distinguish unripe / ripe / overripe only.",
+    "Shared spoilage guard distinguishes fresh / rotten separately to avoid treating rot as merely a later ripeness stage.",
+    "Prediction is visual-condition support, not food-safety certification or disease diagnosis.",
+    "Real phone-photo evaluation remains required before judging/deployment."
+  ]
+}

@@ -1,0 +1,154 @@
+/* HASILTANI — Commodity layout stability */
+
+.commodity-grid-catalog {
+  align-items: stretch !important;
+  grid-auto-rows: 1fr;
+}
+
+.commodity-card-foundation.commodity-card-catalog {
+  align-self: stretch;
+  height: 100%;
+  margin: 0 !important;
+  translate: none;
+  rotate: none;
+}
+
+.commodity-grid-catalog > .commodity-card-catalog:nth-child(1),
+.commodity-grid-catalog > .commodity-card-catalog:nth-child(2),
+.commodity-grid-catalog > .commodity-card-catalog:nth-child(3),
+.commodity-grid-catalog > .commodity-card-catalog:nth-child(4) {
+  top: auto !important;
+  bottom: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  rotate: none;
+}
+
+.commodity-card-catalog:not(:hover) {
+  transform: none;
+}
+
+.commodity-card-catalog:hover {
+  transform: translateY(-6px);
+}
+
+.commodity-body-catalog {
+  min-height: 205px;
+}
+
+.commodity-body-catalog h3 {
+  flex: 0 0 auto;
+}
+
+.commodity-body-catalog p {
+  flex: 1 1 auto;
+  min-height: 62px;
+}
+
+@media (min-width: 1121px) {
+  .commodity-grid-catalog {
+    align-items: stretch !important;
+  }
+
+  .commodity-card-catalog {
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 1120px) {
+  .commodity-grid-catalog {
+    align-items: stretch !important;
+    grid-auto-rows: auto;
+  }
+
+  .commodity-card-catalog {
+    height: auto;
+  }
+}
+
+.hero-slider-nav {
+  gap: 7px;
+  padding: 7px 9px;
+  border-radius: 999px;
+}
+
+.hero-slider-nav button {
+  width: 12px;
+  height: 12px;
+}
+
+.hero-slider-nav button > span {
+  width: 6px;
+  height: 6px;
+}
+
+.hero-slider-nav button:hover > span {
+  transform: scale(1.12);
+}
+
+.hero-slider-nav button.active {
+  width: 30px;
+}
+
+.hero-slider-nav button.active > span {
+  width: 26px;
+  height: 6px;
+}
+
+@media (min-width: 921px) {
+  .hero-slider-nav {
+    bottom: 38px;
+  }
+}
+
+@media (max-width: 920px) {
+  .hero-slider-nav {
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .hero-slider-nav button {
+    width: 11px;
+    height: 11px;
+  }
+
+  .hero-slider-nav button > span {
+    width: 5.5px;
+    height: 5.5px;
+  }
+
+  .hero-slider-nav button.active {
+    width: 27px;
+  }
+
+  .hero-slider-nav button.active > span {
+    width: 23px;
+    height: 5.5px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-slider-nav {
+    bottom: 20px;
+    gap: 5px;
+    padding: 6px 8px;
+  }
+
+  .hero-slider-nav button.active {
+    width: 25px;
+  }
+
+  .hero-slider-nav button.active > span {
+    width: 21px;
+  }
+}
+
+#komoditas {
+  scroll-margin-top: 92px;
+}
+
+@media (max-width: 620px) {
+  #komoditas {
+    scroll-margin-top: 78px;
+  }
+}

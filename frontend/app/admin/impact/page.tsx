@@ -1,0 +1,7 @@
+"use client";
+
+import { BarChart3, GitMerge, Route, ScanLine } from "lucide-react";
+import { useDemoDb } from "@/lib/hooks";
+import { numberId } from "@/lib/format";
+
+export default function AdminImpactPage(){const db=useDemoDb();if(!db)return null;const i=db.impact;return <><div className="stats-grid"><div className="stat-card"><div className="stat-card-head"><span>Analyzed</span><span className="stat-icon"><ScanLine size={18}/></span></div><strong>{numberId(i.analyzedKg)} kg</strong><small>ledger event</small></div><div className="stat-card"><div className="stat-card-head"><span>Matched</span><span className="stat-icon"><BarChart3 size={18}/></span></div><strong>{numberId(i.matchedKg)} kg</strong><small>buyer match tersedia</small></div><div className="stat-card"><div className="stat-card-head"><span>Pooled</span><span className="stat-icon"><GitMerge size={18}/></span></div><strong>{numberId(i.pooledKg)} kg</strong><small>batch tergabung</small></div><div className="stat-card"><div className="stat-card-head"><span>Routed</span><span className="stat-icon"><Route size={18}/></span></div><strong>{numberId(i.routedKg)} kg</strong><small>offer accepted / next state</small></div></div><section className="dash-panel"><h2>Interpretasi</h2><p className="lead" style={{fontSize:16}}>Impact Ledger tidak mengklaim pengurangan limbah aktual tanpa baseline eksternal. Angka hanya merekam volume yang melewati state sistem sehingga dapat ditelusuri dan dipertanggungjawabkan.</p></section></>}

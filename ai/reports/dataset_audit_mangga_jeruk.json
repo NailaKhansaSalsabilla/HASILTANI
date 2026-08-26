@@ -1,0 +1,33 @@
+{
+  "source_archive": "fruit_ripeness_kaggle.zip",
+  "archive_size_bytes": 182734364,
+  "mangga": {
+    "unripe": {
+      "raw": 607,
+      "unique": 607
+    },
+    "ripe": {
+      "raw": 525,
+      "unique": 525
+    },
+    "overripe": {
+      "raw": 148,
+      "unique": 146
+    }
+  },
+  "jeruk": {
+    "unripe": {
+      "raw": 136,
+      "unique": 132
+    },
+    "ripe": {
+      "raw": 120,
+      "unique": 118
+    },
+    "overripe": {
+      "raw": 99,
+      "unique": 98
+    }
+  },
+  "note": "Exact duplicates are removed before a new deterministic train/val/test split. Original Kaggle split is not reused because exact duplicates exist in the archive."
+}

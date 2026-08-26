@@ -1,0 +1,472 @@
+/* HASILTANI — Smart destination routing */
+
+.flow-tap-hint {
+  display: none !important;
+}
+
+.route-section-routing {
+  scroll-margin-top: 86px;
+  padding: clamp(68px, 6vw, 92px) 0 clamp(74px, 6.5vw, 100px);
+  min-height: auto;
+  background:
+    radial-gradient(circle at 86% 27%, rgba(132, 196, 101, .115), transparent 27rem),
+    radial-gradient(circle at 7% 93%, rgba(95, 164, 93, .08), transparent 24rem),
+    linear-gradient(145deg, #06251a 0%, #0a3423 55%, #082b1e 100%);
+}
+
+.route-container {
+  position: relative;
+  z-index: 2;
+}
+
+.route-head {
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, .56fr);
+  gap: clamp(34px, 4.8vw, 68px);
+  align-items: center;
+  margin-bottom: clamp(34px, 3.6vw, 48px);
+}
+
+.route-head h2 {
+  max-width: 760px;
+  font-size: clamp(43px, 4.7vw, 68px);
+  line-height: .96;
+}
+
+.route-head > p {
+  max-width: 510px;
+  justify-self: end;
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.68;
+}
+
+.route-glow-routing {
+  width: 430px;
+  height: 430px;
+  right: -220px;
+  top: 5%;
+  border-width: 74px;
+  opacity: .72;
+}
+
+.route-board-routing {
+  display: grid;
+  grid-template-columns: minmax(220px, .47fr) minmax(72px, .14fr) minmax(0, 1.39fr);
+  gap: clamp(16px, 2vw, 28px);
+  align-items: center;
+  min-height: 0;
+}
+
+.route-source-routing {
+  align-self: center;
+  border-radius: 26px;
+}
+
+.route-source-visual-routing {
+  height: clamp(190px, 17vw, 230px);
+}
+
+.route-source-badge {
+  position: absolute;
+  z-index: 4;
+  left: 14px;
+  top: 14px;
+  display: inline-flex !important;
+  width: auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  color: #e8f5e7 !important;
+  background: rgba(6,37,26,.72);
+  backdrop-filter: blur(10px);
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 9px !important;
+  font-weight: 800;
+}
+
+.route-source-copy-routing {
+  padding: 17px 18px 19px;
+}
+
+.route-source-copy-routing strong {
+  font-size: clamp(21px, 1.7vw, 25px);
+}
+
+.route-connector-routing {
+  width: 100%;
+}
+
+.route-destinations-routing {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.route-card-routing {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.052));
+}
+
+.route-card-routing:hover {
+  transform: none;
+  border-color: rgba(202, 226, 129, .24);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.135), rgba(255,255,255,.07));
+}
+
+.route-card-main {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: 15px;
+  align-items: center;
+  min-height: 116px;
+  padding: 16px 18px;
+}
+
+.route-card-icon-routing {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+}
+
+.route-card-copy {
+  min-width: 0;
+}
+
+.route-card-copy h3 {
+  margin: 3px 0 4px;
+  font-size: clamp(22px, 1.75vw, 27px);
+  line-height: 1.05;
+}
+
+.route-card-copy p {
+  max-width: 760px;
+  font-size: clamp(11px, .82vw, 13px);
+  line-height: 1.5;
+}
+
+.route-card-copy small {
+  margin-top: 5px;
+  font-size: 9px;
+}
+
+.route-action {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(206, 232, 139, .17);
+  border-radius: 999px;
+  color: #d7ed93;
+  background: rgba(7, 34, 24, .26);
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 850;
+  transition:
+    color .22s ease,
+    background .22s ease,
+    border-color .22s ease,
+    transform .22s ease;
+}
+
+.route-action:hover {
+  color: #10281b;
+  background: #d3e987;
+  border-color: #d3e987;
+  transform: translateY(-1px);
+}
+
+.route-action .route-arrow {
+  display: block;
+  flex: 0 0 auto;
+  transition: transform .28s ease;
+}
+
+.route-card-routing.is-open .route-action .route-arrow {
+  transform: rotate(90deg);
+}
+
+.route-message {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  opacity: 0;
+  border-top: 1px solid transparent;
+  background: rgba(4, 24, 16, .20);
+  transition:
+    max-height .42s cubic-bezier(.2,.8,.2,1),
+    padding .32s ease,
+    opacity .25s ease,
+    border-color .32s ease;
+}
+
+.route-card-routing.is-open .route-message {
+  max-height: 180px;
+  padding: 14px 18px 16px;
+  opacity: 1;
+  border-top-color: rgba(255,255,255,.09);
+}
+
+.route-message strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #e9f3ea;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.route-message p {
+  margin: 0;
+  max-width: 880px;
+  color: #aec1b3;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.route-message-cta {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 11px;
+  border-radius: 999px;
+  color: #10281b;
+  background: #cfe786;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 850;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.route-message-cta:hover {
+  transform: translateY(-1px);
+  background: #ddf29d;
+}
+
+@media (min-width: 1121px) and (max-height: 900px) {
+  .route-section-routing {
+    padding-top: 58px;
+    padding-bottom: 68px;
+  }
+
+  .route-head {
+    margin-bottom: 28px;
+  }
+
+  .route-head h2 {
+    font-size: clamp(40px, 4.1vw, 59px);
+  }
+
+  .route-head > p {
+    line-height: 1.55;
+  }
+
+  .route-source-visual-routing {
+    height: 190px;
+  }
+
+  .route-card-main {
+    min-height: 102px;
+    padding: 13px 16px;
+  }
+
+  .route-card-copy h3 {
+    font-size: clamp(21px, 1.55vw, 25px);
+  }
+}
+
+@media (min-width: 1121px) and (max-height: 760px) {
+  .route-section-routing {
+    padding-top: 46px;
+    padding-bottom: 54px;
+  }
+
+  .route-head {
+    margin-bottom: 22px;
+  }
+
+  .route-head h2 {
+    font-size: clamp(37px, 3.7vw, 52px);
+  }
+
+  .route-source-visual-routing {
+    height: 168px;
+  }
+
+  .route-card-main {
+    min-height: 92px;
+  }
+
+  .route-card-copy p {
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 1240px) {
+  .route-head {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .5fr);
+  }
+
+  .route-board-routing {
+    grid-template-columns: minmax(210px, .43fr) 62px minmax(0, 1.42fr);
+  }
+
+  .route-action span {
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 920px) {
+  .route-section-routing {
+    padding: 72px 0 82px;
+  }
+
+  .route-head {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .route-head h2,
+  .route-head > p {
+    margin-inline: auto;
+  }
+
+  .route-head > p {
+    justify-self: center;
+  }
+
+  .route-board-routing {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .route-source-routing {
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
+  .route-source-visual-routing {
+    height: 225px;
+  }
+
+  .route-connector-routing {
+    width: 1px;
+    height: 58px;
+    justify-self: center;
+  }
+
+  .route-card-main {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .route-section-routing {
+    scroll-margin-top: 76px;
+    padding: 64px 0 72px;
+  }
+
+  .route-head {
+    margin-bottom: 30px;
+  }
+
+  .route-head h2 {
+    font-size: clamp(36px, 11vw, 50px);
+  }
+
+  .route-head > p {
+    font-size: 13px;
+  }
+
+  .route-source-visual-routing {
+    height: 205px;
+  }
+
+  .route-card-routing {
+    border-radius: 20px;
+  }
+
+  .route-card-main {
+    grid-template-columns: 43px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .route-card-icon-routing {
+    width: 43px;
+    height: 43px;
+    grid-row: 1;
+  }
+
+  .route-card-copy {
+    grid-column: 2;
+  }
+
+  .route-card-copy h3 {
+    font-size: 23px;
+  }
+
+  .route-card-copy p {
+    font-size: 12px;
+  }
+
+  .route-action {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .route-message {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    padding-inline: 16px;
+  }
+
+  .route-card-routing.is-open .route-message {
+    max-height: 260px;
+    padding: 14px 16px 16px;
+  }
+
+  .route-message-cta {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 380px) {
+  .route-card-main {
+    padding: 14px;
+  }
+
+  .route-message {
+    padding-inline: 14px;
+  }
+
+  .route-card-routing.is-open .route-message {
+    padding-inline: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-message,
+  .route-action,
+  .route-action .route-arrow {
+    transition: none !important;
+  }
+}

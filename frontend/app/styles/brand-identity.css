@@ -1,0 +1,412 @@
+/* HASILTANI brand identity — source final */
+
+.brand-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.brand-identity-icon {
+  width: 50px !important;
+  height: 47px !important;
+  flex: 0 0 auto;
+  object-fit: contain !important;
+}
+
+.brand-identity-wordmark {
+  width: 170px !important;
+  height: auto !important;
+  max-height: 64px;
+  object-fit: contain !important;
+  object-position: left center;
+}
+
+/* Public header */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255,255,255,.9);
+}
+
+.brand-mark img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+.brand-wordmark {
+  width: 205px;
+  height: 60px;
+  display: block;
+  overflow: hidden;
+}
+
+.brand-wordmark img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+
+/* Footer */
+.footer-brand .brand-identity {
+  width: fit-content;
+}
+
+.footer-brand .brand-identity-icon {
+  width: 58px !important;
+  height: 55px !important;
+}
+
+.footer-brand .brand-identity-wordmark {
+  width: 220px !important;
+}
+
+/* Dashboard role */
+.dashboard-brand-primary {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.dashboard-brand-primary .brand-identity {
+  width: 100%;
+  min-height: 68px;
+  padding: 8px 10px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(23,61,43,.1);
+  box-shadow: 0 10px 28px rgba(0,0,0,.11);
+}
+
+.dashboard-brand-primary .brand-identity-icon {
+  width: 47px !important;
+  height: 44px !important;
+}
+
+.dashboard-brand-primary .brand-identity-wordmark {
+  width: min(145px, calc(100% - 57px)) !important;
+}
+
+.dashboard-mobile-brand {
+  display: none;
+}
+
+.dashboard-mobile-sheet-brand {
+  margin-bottom: 10px;
+}
+
+.dashboard-mobile-sheet-brand .brand-identity {
+  min-height: 48px;
+  padding: 5px 8px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.96);
+}
+
+.dashboard-mobile-sheet-brand .brand-identity-icon {
+  width: 39px !important;
+  height: 37px !important;
+}
+
+.dashboard-mobile-sheet-brand .brand-identity-wordmark {
+  width: 122px !important;
+}
+
+/* Auth — Login / Daftar */
+.auth-logo-scene img {
+  object-fit: contain !important;
+}
+
+.auth-brand-wordmark {
+  display: block;
+  width: min(360px, 78%);
+  height: auto;
+  margin: 0 0 14px;
+  padding: 4px 8px;
+  object-fit: contain;
+}
+
+/* Closing brand on home */
+.closing-brand-mark img,
+.closing-brand-word img,
+.closing-mark img {
+  object-fit: contain !important;
+}
+
+@media (max-width: 1050px) {
+  .dashboard-brand-primary .brand-identity {
+    width: 58px;
+    min-height: 58px;
+    padding: 5px;
+    justify-content: center;
+  }
+
+  .dashboard-brand-primary .brand-identity-icon {
+    width: 47px !important;
+    height: 45px !important;
+  }
+
+  .dashboard-brand-primary .brand-identity-wordmark {
+    display: none !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .dashboard-brand-primary {
+    display: none;
+  }
+
+  .dashboard-mobile-brand {
+    display: inline-flex;
+  }
+
+  .dashboard-mobile-brand .brand-identity {
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 13px;
+    background: rgba(255,255,255,.94);
+  }
+
+  .dashboard-mobile-brand .brand-identity-icon {
+    width: 38px !important;
+    height: 36px !important;
+  }
+
+  .brand-wordmark {
+    width: 175px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-mark {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-wordmark {
+    width: 145px;
+    height: 48px;
+  }
+
+  .auth-brand-wordmark {
+    width: min(260px, 72%);
+  }
+}
+
+/* AUTH LOGO STACK — START
+   Mascot bulat + wordmark vertikal untuk Login dan Daftar.
+   Tidak mengubah form atau logic autentikasi.
+*/
+.auth-visual-account .auth-logo-scene {
+  left: 50% !important;
+  right: auto !important;
+  top: 34% !important;
+  width: min(47%, 350px) !important;
+  aspect-ratio: 1 !important;
+  transform: translate(-50%, -50%) !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+}
+
+.auth-visual-account .auth-logo-scene .auth-logo-mascot {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: 78% !important;
+  height: 78% !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.auth-visual-account .auth-logo-scene .auth-logo-wordmark {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  top: 101% !important;
+  bottom: auto !important;
+  z-index: 4 !important;
+  display: block !important;
+  width: min(92%, 310px) !important;
+  height: auto !important;
+  max-height: 92px !important;
+  transform: translateX(-50%) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 6px 16px rgba(35, 62, 39, .12)) !important;
+  pointer-events: none !important;
+}
+
+/* Wordmark lama di area headline tidak digunakan lagi. */
+.auth-visual-account .auth-visual-content-account > .auth-brand-wordmark {
+  display: none !important;
+}
+
+@media (min-width: 981px) and (max-height: 900px) {
+  .auth-visual-account .auth-logo-scene {
+    top: 31% !important;
+    width: min(43%, 310px) !important;
+  }
+
+  .auth-visual-account .auth-logo-scene .auth-logo-wordmark {
+    width: min(90%, 270px) !important;
+    top: 100% !important;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 760px) {
+  .auth-visual-account .auth-logo-scene {
+    top: 28% !important;
+    width: min(36%, 245px) !important;
+  }
+
+  .auth-visual-account .auth-logo-scene .auth-logo-wordmark {
+    width: min(92%, 225px) !important;
+    top: 99% !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .auth-visual-account .auth-logo-scene {
+    left: auto !important;
+    right: 4% !important;
+    top: 43% !important;
+    width: min(31vw, 235px) !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .auth-visual-account .auth-logo-scene .auth-logo-wordmark {
+    width: min(92%, 210px) !important;
+    top: 99% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .auth-visual-account .auth-logo-scene {
+    right: -15px !important;
+    top: 39% !important;
+    width: 175px !important;
+    opacity: .88 !important;
+  }
+
+  .auth-visual-account .auth-logo-scene .auth-logo-wordmark {
+    width: 155px !important;
+    top: 96% !important;
+  }
+}
+/* AUTH LOGO STACK — END */
+
+/* DASHBOARD BRAND ALIGNMENT — START
+   Mascot dan wordmark dipusatkan sebagai satu lockup.
+*/
+
+.sidebar > .brand,
+.sidebar > .brand-identity,
+.sidebar .brand-identity,
+.dashboard-brand-primary .brand-identity {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 76px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  padding: 8px 12px !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background:
+    linear-gradient(135deg, rgba(255,254,248,.98), rgba(237,243,223,.96)) !important;
+  border: 1px solid rgba(49,90,54,.12) !important;
+  box-shadow:
+    0 8px 24px rgba(20,49,26,.10),
+    0 1px 0 rgba(255,255,255,.82) inset !important;
+}
+
+.sidebar .brand-identity-icon,
+.dashboard-brand-primary .brand-identity-icon {
+  flex: 0 0 auto !important;
+  width: 55px !important;
+  height: 53px !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.sidebar .brand-identity-wordmark,
+.dashboard-brand-primary .brand-identity-wordmark {
+  flex: 0 1 178px !important;
+  width: 178px !important;
+  max-width: calc(100% - 58px) !important;
+  height: auto !important;
+  margin: 0 0 0 -5px !important;
+  transform: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Jika Next Image menghasilkan wrapper/span, paksa tetap center. */
+.sidebar .brand-identity > span,
+.dashboard-brand-primary .brand-identity > span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Compact sidebar tetap hanya mascot. */
+@media (max-width: 1050px) and (min-width: 821px) {
+  .sidebar .brand-identity {
+    width: 58px !important;
+    min-height: 58px !important;
+    padding: 4px !important;
+    gap: 0 !important;
+  }
+
+  .sidebar .brand-identity-icon {
+    width: 47px !important;
+    height: 46px !important;
+  }
+
+  .sidebar .brand-identity-wordmark {
+    display: none !important;
+  }
+}
+
+/* Mobile logo tetap compact dan tidak melebar. */
+@media (max-width: 820px) {
+  .dashboard-mobile-brand .brand-identity {
+    width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 2px !important;
+    gap: 0 !important;
+  }
+
+  .dashboard-mobile-brand .brand-identity-icon {
+    width: 37px !important;
+    height: 36px !important;
+  }
+
+  .dashboard-mobile-brand .brand-identity-wordmark {
+    display: none !important;
+  }
+}
+
+/* DASHBOARD BRAND ALIGNMENT — END */

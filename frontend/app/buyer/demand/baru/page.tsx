@@ -1,0 +1,17 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
+import { createDemoDemand } from "@/lib/demo-db";
+import { useSessionUser } from "@/lib/hooks";
+import type { Commodity } from "@/lib/types";
+import { CommodityPicker } from "@/components/CommodityPicker";
+
+const conditions: Record<Commodity, Array<[string, string]>> = {
+  pisang: [["unripe", "Belum Matang"], ["ripe", "Matang"], ["overripe", "Terlalu Matang"], ["rotten", "Rusak / Busuk · Review"]],
+  mangga: [["unripe", "Belum Matang"], ["ripe", "Matang"], ["overripe", "Terlalu Matang"], ["rotten", "Rusak / Busuk · Review"]],
+  jeruk: [["unripe", "Belum Matang"], ["ripe", "Matang"], ["overripe", "Terlalu Matang"], ["rotten", "Rusak / Busuk · Review"]],
+  tomat: [["unripe", "Belum Matang"], ["ripe", "Matang"], ["overripe", "Terlalu Matang"], ["rotten", "Rusak / Busuk · Review"]],
+};
+
+export default function NewDemand(){const user=useSessionUser();const router=useRouter();const [commodity,setCommodity]=useState<Commodity>("tomat");const [accepted,setAccepted]=useState<string[]>(["ripe"]);const [volume,setVolume]=useState("50");const [price,setPrice]=useState("9500");const [location,setLocation]=useState("Bandar Lampung");const [radius,setRadius]=useState("40");const [deadline,setDeadline]=useState(new Date(Date.now()+4*86400000).toISOString().slice(0,10));if(!user)return null;function toggle(c:string){setAccepted(v=>v.includes(c)?v.filter(x=>x!==c):[...v,c])}async function submit(e:FormEvent){e.preventDefault();if(!accepted.length)return;await createDemoDemand({buyerId:user!.id,buyerName:user!.organization||user!.name,commodity,acceptedConditions:accepted,minimumVolumeKg:Number(volume),offerPricePerKg:Number(price),location,radiusKm:Number(radius),deadline,status:"active"});router.push("/buyer")}return <section className="dash-panel" style={{maxWidth:920}}><div className="panel-head"><div><h2>Buat kebutuhan buyer</h2><span className="muted">Buyer menentukan syarat. AI tidak menentukan harga.</span></div></div><form onSubmit={submit}><label style={{fontSize:13,fontWeight:800}}>Komoditas</label><CommodityPicker value={commodity} onChange={v=>{setCommodity(v);setAccepted([conditions[v][0][0]])}}/><div className="field"><label>Kondisi visual yang diterima</label><div style={{display:"flex",gap:8,flexWrap:"wrap"}}>{conditions[commodity].map(([raw,label])=><button type="button" key={raw} className={`btn btn-small ${accepted.includes(raw)?"btn-primary":"btn-ghost"}`} onClick={()=>toggle(raw)}>{label}</button>)}</div></div><div className="form-row"><div className="field"><label>Minimum volume (kg)</label><input type="number" min="1" value={volume} onChange={e=>setVolume(e.target.value)} required/></div><div className="field"><label>Offer per kg</label><input type="number" min="1" value={price} onChange={e=>setPrice(e.target.value)} required/></div></div><div className="form-row"><div className="field"><label>Lokasi pickup / kebutuhan</label><input value={location} onChange={e=>setLocation(e.target.value)} required/></div><div className="field"><label>Radius (km)</label><input type="number" min="1" value={radius} onChange={e=>setRadius(e.target.value)} required/></div></div><div className="field"><label>Deadline kebutuhan</label><input type="date" value={deadline} onChange={e=>setDeadline(e.target.value)} required/></div><button className="btn btn-primary">Publikasikan Demand</button></form></section>}

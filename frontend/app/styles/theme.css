@@ -1,0 +1,259 @@
+/* HASILTANI — Theme */
+
+:root {
+  --clean-white: #ffffff;
+  --clean-soft: #f7faf8;
+  --clean-soft-2: #f2f7f4;
+  --clean-border: rgba(21, 91, 55, .11);
+  --clean-shadow: 0 18px 48px rgba(16, 68, 42, .08);
+  --clean-green-deep: #082b1d;
+  --clean-green: #176b43;
+  --clean-green-mid: #3f8f5b;
+  --clean-green-light: #a7d86d;
+}
+
+html {
+  background: var(--clean-white);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 7%, rgba(82, 154, 91, .075), transparent 27rem),
+    radial-gradient(circle at 88% 4%, rgba(167, 216, 109, .065), transparent 26rem),
+    linear-gradient(180deg, #ffffff 0%, #f8fbf9 48%, #ffffff 100%);
+  background-attachment: fixed;
+}
+
+.site-header-inner,
+.site-header-inner-foundation,
+.site-header-foundation.scrolled .site-header-inner-foundation {
+  background: rgba(255, 255, 255, .90);
+  border-color: rgba(24, 92, 56, .10);
+}
+
+.site-header-foundation.scrolled .site-header-inner-foundation {
+  background: rgba(255, 255, 255, .96);
+}
+
+.brand-mark {
+  background:
+    radial-gradient(circle at 32% 24%, rgba(167, 216, 109, .15), transparent 48%),
+    rgba(255, 255, 255, .94);
+}
+
+.page-hero,
+.form-card,
+.result-side,
+.panel,
+.quick-card,
+.stat-card,
+.dash-panel,
+.role-card,
+.commodity-card-foundation,
+.flow-card-foundation {
+  background-color: #ffffff;
+}
+
+.page-hero {
+  background:
+    radial-gradient(circle at 86% 12%, rgba(77, 145, 83, .08), transparent 25rem),
+    linear-gradient(180deg, #f7faf8 0%, #ffffff 100%);
+}
+
+.section-soft,
+.scan-note,
+.meta-box,
+.route-row,
+.list-item,
+.detail-card,
+.rule-card {
+  background: #f4f8f5;
+}
+
+.form-aside {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(167,216,109,.11), transparent 13rem),
+    var(--forest-900);
+}
+
+.form-card,
+.result-side,
+.panel,
+.quick-card,
+.stat-card,
+.dash-panel,
+.role-card {
+  border-color: var(--clean-border);
+  box-shadow: var(--clean-shadow);
+}
+
+.auth-page {
+  background: #f7faf8;
+}
+
+.auth-form-wrap {
+  background:
+    radial-gradient(circle at 85% 8%, rgba(87, 153, 91, .07), transparent 22rem),
+    #ffffff;
+}
+
+.demo-role-btn {
+  background: #ffffff;
+}
+
+.dashboard-body {
+  background:
+    radial-gradient(circle at 88% 4%, rgba(91, 157, 91, .055), transparent 25rem),
+    #f6faf7;
+}
+
+.dashboard-topbar {
+  background: rgba(255, 255, 255, .91);
+}
+
+.dashboard-main {
+  background: transparent;
+}
+
+.commodity-section-foundation {
+  background:
+    radial-gradient(circle at 8% 50%, rgba(77, 145, 83, .085), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, #f6faf7 100%);
+}
+
+.flow-section-foundation {
+  background:
+    radial-gradient(circle at 84% 30%, rgba(142, 198, 101, .075), transparent 23rem),
+    linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+}
+
+.closing-section-foundation {
+  background:
+    radial-gradient(circle at 10% 50%, rgba(82, 150, 87, .075), transparent 25rem),
+    linear-gradient(180deg, #ffffff 0%, #f6faf7 100%);
+}
+
+.commodity-card-foundation {
+  background: rgba(255, 255, 255, .91);
+  border-color: rgba(30, 105, 61, .10);
+  box-shadow: 0 18px 48px rgba(25, 85, 51, .065);
+}
+
+.commodity-card-foundation:hover {
+  border-color: rgba(64, 143, 91, .25);
+  box-shadow: 0 28px 68px rgba(22, 91, 54, .13);
+}
+
+.flow-card-foundation {
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.98), rgba(246,250,247,.94));
+  border-color: rgba(30, 105, 61, .10);
+}
+
+.flow-icon {
+  background: #edf7e8;
+}
+
+.commodity-section-foundation::before {
+  opacity: .12;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(28, 101, 57, .24) 1px, transparent 0);
+}
+
+.btn-orange {
+  background: var(--clean-green-light);
+  color: #143321;
+  box-shadow: 0 12px 28px rgba(64, 143, 91, .16);
+}
+
+.btn-soft {
+  background: #edf7e8;
+}
+
+.btn-primary-foundation {
+  background: #c8e887;
+  color: #112e1d;
+}
+
+.btn-primary-foundation:hover {
+  background: #d8f09e;
+}
+
+.pool-target {
+  background: #b9df78;
+  color: #143321;
+  box-shadow: 0 30px 80px rgba(63, 143, 91, .15);
+}
+
+.ticker-dot,
+.route-moving-dot {
+  background: #9fd166;
+}
+
+.route-moving-dot {
+  box-shadow: 0 0 0 10px rgba(159, 209, 102, .12);
+}
+
+.hero-insight,
+.closing-card,
+.route-section-foundation {
+  --accent-soft-green: rgba(167, 216, 109, .14);
+}
+
+.result-main::after,
+.welcome-card::after {
+  border-color: rgba(167, 216, 109, .16);
+}
+
+.form-aside::after {
+  border-color: rgba(167, 216, 109, .14);
+}
+
+.site-footer,
+.site-footer-foundation {
+  background:
+    radial-gradient(circle at 90% 5%, rgba(167, 216, 109, .07), transparent 25rem),
+    #071e16;
+}
+
+.role-chip.role-buyer {
+  color: #315d3c;
+  border-color: rgba(64, 132, 76, .13);
+  background: rgba(232, 244, 229, .88);
+}
+
+.role-chip.role-buyer .role-chip-dot {
+  background: #69a85d;
+  box-shadow: 0 0 0 4px rgba(105, 168, 93, .11);
+}
+
+.role-chip.role-admin {
+  color: #24553a;
+  border-color: rgba(50, 118, 73, .12);
+  background: rgba(228, 241, 231, .90);
+}
+
+.role-chip.role-admin .role-chip-dot {
+  background: #4b9360;
+  box-shadow: 0 0 0 4px rgba(75, 147, 96, .11);
+}
+
+.alert-error,
+.alert-warning,
+.status.pending,
+.status.review,
+.status.rejected,
+.status.restricted,
+.alert-restricted,
+.btn-danger,
+.btn-danger-soft,
+.restricted-panel {
+  
+}
+
+@media (max-width: 1120px) {
+  .site-header-brand.open .site-nav-brand,
+  .site-header.open .site-nav {
+    background: rgba(255, 255, 255, .98);
+  }
+}

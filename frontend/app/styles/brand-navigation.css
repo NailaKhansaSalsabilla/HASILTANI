@@ -1,0 +1,268 @@
+/* HASILTANI — Brand and navigation */
+
+.site-header-inner-brand {
+  gap: 22px;
+  padding-left: 12px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 218px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 24%, rgba(211, 242, 112, .18), transparent 46%),
+    rgba(255, 255, 255, .72);
+  border: 1px solid rgba(23, 73, 44, .10);
+  box-shadow:
+    0 8px 20px rgba(17, 58, 36, .10),
+    0 1px 0 rgba(255,255,255,.82) inset;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.06);
+}
+
+.brand-wordmark {
+  position: relative;
+  display: block;
+  width: 145px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.brand-wordmark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.brand-lockup:hover .brand-mark {
+  transform: rotate(-3deg) scale(1.05);
+  box-shadow:
+    0 12px 25px rgba(17, 58, 36, .15),
+    0 1px 0 rgba(255,255,255,.84) inset;
+}
+
+.site-nav-brand {
+  flex-wrap: nowrap;
+}
+
+.site-nav-brand > a:not(.header-scan-brand):not(.dashboard-link) {
+  padding-inline: 9px;
+}
+
+.role-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 10px;
+  margin-left: 4px;
+  border-radius: 999px;
+  white-space: nowrap;
+  border: 1px solid rgba(31, 92, 53, .11);
+  background: rgba(227, 239, 216, .68);
+  color: #245a37;
+  font-size: 10px;
+  font-weight: 880;
+  letter-spacing: .025em;
+}
+
+.role-chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #63a64d;
+  box-shadow: 0 0 0 4px rgba(99, 166, 77, .11);
+}
+
+.role-chip.role-buyer {
+  color: #73520c;
+  border-color: rgba(179, 132, 30, .13);
+  background: rgba(249, 230, 178, .62);
+}
+
+.role-chip.role-buyer .role-chip-dot {
+  background: #d99d28;
+  box-shadow: 0 0 0 4px rgba(217, 157, 40, .11);
+}
+
+.role-chip.role-admin {
+  color: #36576b;
+  border-color: rgba(62, 104, 127, .12);
+  background: rgba(219, 233, 239, .70);
+}
+
+.role-chip.role-admin .role-chip-dot {
+  background: #538ba5;
+  box-shadow: 0 0 0 4px rgba(83, 139, 165, .11);
+}
+
+.dashboard-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 10px !important;
+  color: #2f493a !important;
+}
+
+.header-scan-brand {
+  margin-left: 2px;
+}
+
+.footer-brand-lockup-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.footer-mark-brand {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.09);
+}
+
+.footer-mark-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-wordmark-brand {
+  position: relative;
+  display: block;
+  width: 195px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.footer-wordmark-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(1.2) saturate(.92);
+}
+
+@media (max-width: 1180px) {
+  .brand-lockup {
+    min-width: 190px;
+  }
+
+  .brand-mark {
+    width: 41px;
+    height: 41px;
+  }
+
+  .brand-wordmark {
+    width: 127px;
+    height: 32px;
+  }
+
+  .site-nav-brand > a:not(.header-scan-brand):not(.dashboard-link) {
+    padding-inline: 7px;
+    font-size: 12px;
+  }
+
+  .role-chip {
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 930px) {
+  .site-nav-brand {
+    display: none;
+  }
+
+  .mobile-menu-btn-foundation {
+    display: grid;
+    place-items: center;
+  }
+
+  .site-header-brand.open .site-nav-brand {
+    display: grid;
+    position: absolute;
+    top: 82px;
+    left: 14px;
+    right: 14px;
+    padding: 12px;
+    gap: 3px;
+    border: 1px solid rgba(24, 65, 42, .10);
+    border-radius: 20px;
+    background: rgba(250, 247, 239, .98);
+    box-shadow: 0 18px 48px rgba(14, 44, 30, .14);
+    backdrop-filter: blur(20px);
+  }
+
+  .site-header-brand.open .site-nav-brand > a {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 13px !important;
+  }
+
+  .site-header-brand.open .role-chip {
+    width: fit-content;
+    margin: 8px 12px 3px;
+  }
+
+  .site-header-brand.open .header-scan-brand {
+    margin: 5px 0 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header-inner-brand {
+    padding-left: 9px;
+  }
+
+  .brand-lockup {
+    gap: 7px;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+  }
+
+  .brand-wordmark {
+    width: 118px;
+    height: 29px;
+  }
+
+  .footer-brand-lockup-brand {
+    gap: 9px;
+  }
+
+  .footer-mark-brand {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-wordmark-brand {
+    width: 165px;
+    height: 41px;
+  }
+}

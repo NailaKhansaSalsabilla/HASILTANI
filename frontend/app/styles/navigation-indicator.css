@@ -1,0 +1,80 @@
+/* HASILTANI — Navigation indicator */
+
+.site-nav-brand .nav-section-link::after,
+.site-nav-foundation > a.nav-section-link:not(.header-scan-foundation)::after {
+  content: none !important;
+  display: none !important;
+}
+
+.site-nav-brand .nav-section-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-nav-brand .nav-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1.25;
+}
+
+.site-nav-brand .nav-label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: auto;
+  bottom: -7px;
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: #4f9655;
+  opacity: 0;
+  transform: translateX(-50%) scaleX(.35);
+  transform-origin: center center;
+  transition:
+    opacity .24s ease,
+    transform .24s ease,
+    width .24s ease,
+    background .24s ease;
+  pointer-events: none;
+}
+
+.site-nav-brand .nav-section-link:hover .nav-label::after {
+  opacity: .48;
+  transform: translateX(-50%) scaleX(.72);
+}
+
+.site-nav-brand .nav-section-link.active .nav-label::after {
+  width: 28px;
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+  background: #438a4c;
+}
+
+.site-nav-brand .nav-section-link.active::before {
+  left: 4px;
+  right: 4px;
+  top: 3px;
+  bottom: 3px;
+}
+
+@media (max-width: 1120px) {
+  .site-header-brand.open .site-nav-brand .nav-section-link {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .site-header-brand.open .site-nav-brand .nav-label::after {
+    left: 50%;
+    right: auto;
+    bottom: -5px;
+  }
+
+  .site-header-brand.open .site-nav-brand .nav-section-link.active .nav-label::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
